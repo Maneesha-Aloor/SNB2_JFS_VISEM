@@ -1,0 +1,123 @@
+/* -------- GLOBAL STYLES -------- */
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#2b6cb0;
+  --muted:#666;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#222;
+}
+
+/* -------- HEADER / TOP BAR -------- */
+.topbar{
+  background: linear-gradient(90deg, #1e90ff, #4aa3ff);
+  color:white;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.topbar h1{
+  margin:0;
+  font-size:1.4rem;
+}
+
+.controls input{
+  padding:8px 12px;
+  border-radius:6px;
+  border:none;
+  outline:none;
+  min-width:220px;
+  font-size:0.95rem;
+}
+
+/* -------- MAIN CONTENT -------- */
+.container{
+  padding:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap:20px;
+}
+
+/* -------- CARD COMPONENT -------- */
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:16px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  box-shadow: 0 6px 18px rgba(20,20,40,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 12px 30px rgba(20,20,40,0.15);
+}
+
+/* -------- ROUND IMAGE WITH ANIMATED GLOW -------- */
+.thumb{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;     /* 🔥 Makes the image round */
+  overflow: hidden;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 🔥 Animated Glow */
+  animation: roundGlow 2.5s infinite alternate ease-in-out;
+}
+
+.thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------- ANIMATED GLOW KEYFRAMES -------- */
+@keyframes roundGlow {
+  0%   { box-shadow: 0 0 12px rgba(255, 0, 255, 0.6); }   /* Pink */
+  25%  { box-shadow: 0 0 16px rgba(0, 255, 255, 0.6); }   /* Cyan */
+  50%  { box-shadow: 0 0 20px rgba(0, 128, 255, 0.6); }   /* Blue */
+  75%  { box-shadow: 0 0 24px rgba(0, 255, 128, 0.6); }   /* Green */
+  100% { box-shadow: 0 0 28px rgba(255, 255, 0, 0.6); }   /* Yellow */
+}
+
+/* -------- TEXT CONTENT -------- */
+.info h3{
+  margin:0;
+  font-size:1.1rem;
+}
+
+.info p{
+  margin:6px 0 0;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+
+/* -------- FOOTER -------- */
+.footer{
+  text-align:center;
+  padding:18px 0;
+  color:var(--muted);
+  font-size:0.9rem;
+}
